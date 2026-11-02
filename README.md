@@ -1,66 +1,81 @@
-# 🎵 Murbach Music School — Projeto de Banco de Dados
+# 🎵 Murbach Music School — Banco de Dados
 
-![Status](https://img.shields.io/badge/Projeto-Acadêmico-blue)
-![Área](https://img.shields.io/badge/Área-Banco%20de%20Dados-purple)
-![Desenvolvimento](https://img.shields.io/badge/Etapa-Modelagem%20e%20Documentação-orange)
+![Projeto](https://img.shields.io/badge/Projeto-Acadêmico-blue)
+![Banco de dados](https://img.shields.io/badge/Banco-MySQL-orange)
+![Modelagem](https://img.shields.io/badge/Modelagem-Conceitual%20e%20Lógica-purple)
 
 ## 📌 Sobre o projeto
 
-Este projeto tem como objetivo desenvolver a modelagem de um banco de dados para a **Murbach Music School**, uma escola de música fictícia.
+O projeto **Murbach Music School** consiste no desenvolvimento de um banco de dados para representar e organizar os processos de uma escola de música fictícia.
 
-A proposta é estruturar as informações da instituição, organizando seus processos e relacionamentos para facilitar o gerenciamento dos dados e reduzir problemas como duplicidade de informações, retrabalho e falta de controle.
+A proposta é estruturar as informações da instituição em um modelo integrado, contemplando diferentes setores e suas necessidades, desde o gerenciamento acadêmico até o controle financeiro e administrativo.
 
-O projeto contempla diferentes setores da escola, buscando representar suas necessidades em uma estrutura integrada.
+O desenvolvimento envolve a modelagem do banco, definição das tabelas e relacionamentos, criação de comandos SQL, inserção de dados e elaboração de consultas e testes de integridade.
 
 ## 🎯 Objetivos
 
-- Desenvolver a modelagem conceitual e lógica do banco de dados.
-- Identificar as entidades, seus atributos e relacionamentos.
-- Organizar as informações dos setores da instituição.
-- Definir chaves primárias e estrangeiras.
-- Documentar as decisões tomadas durante o desenvolvimento.
+- Organizar as informações dos diferentes setores da escola.
+- Desenvolver o Diagrama Entidade-Relacionamento (DER).
+- Converter a modelagem conceitual em modelo lógico.
+- Definir chaves primárias, estrangeiras e restrições.
+- Estruturar o banco de dados utilizando SQL.
+- Elaborar consultas para obtenção de informações gerenciais.
+- Criar testes para verificar as regras de integridade dos dados.
 
 ## 🏫 Setores contemplados
 
-O modelo considera os principais setores da Murbach Music School:
+O banco de dados foi estruturado para atender quatro áreas principais:
 
-| Setor | Descrição |
+| Setor | Funcionalidades representadas |
 |---|---|
-| 🎓 Acadêmico | Gerenciamento de alunos, matrículas, cursos, aulas e presenças. |
-| 👨‍🏫 Professores | Organização dos professores, aulas e registros de horas. |
-| 💰 Financeiro | Controle de mensalidades, pagamentos, receitas e despesas. |
-| 👥 Recursos Humanos | Gerenciamento de funcionários, contratos, folha de pagamento e benefícios. |
+| 🎓 Acadêmico | Alunos, matrículas, cursos, aulas, presenças e reposições. |
+| 👨‍🏫 Professores | Cadastro de professores, registros de horas e informações relacionadas às aulas. |
+| 💰 Financeiro | Fornecedores, cobranças, mensalidades, pagamentos, receitas, despesas e conciliação financeira. |
+| 👥 Recursos Humanos | Funcionários, cargos, vagas, contratos, benefícios, folha de pagamento e registro de ponto. |
 
 ## 🗂️ Modelagem do banco de dados
 
 ### Diagrama Entidade-Relacionamento (DER)
 
-O DER representa as entidades do sistema e os relacionamentos entre elas.
+O DER apresenta a modelagem conceitual do sistema, demonstrando as entidades e os relacionamentos identificados durante o levantamento dos requisitos.
 
-![Diagrama Entidade-Relacionamento](DER.jpeg)
+![Diagrama Entidade-Relacionamento](DER%20Grupo01.jpg.jpeg)
 
-### Fluxograma
+### Modelo lógico
 
-O fluxograma apresenta uma visão dos processos considerados no projeto.
+O modelo lógico apresenta a estrutura relacional do banco, com suas tabelas, atributos, chaves primárias e estrangeiras.
 
-![Fluxograma](FLUXOGRAMA.jpeg)
+![Modelo lógico](Modelo_logico_v4.jpg.jpeg)
 
-## ⚙️ Desenvolvimento
+## 💻 Scripts SQL
 
-O trabalho foi desenvolvido em etapas, envolvendo:
+O repositório contém arquivos SQL separados de acordo com suas finalidades:
 
-- Levantamento de requisitos e regras de negócio.
-- Identificação e organização das entidades.
-- Construção e revisão do DER.
-- Definição de atributos e relacionamentos.
-- Estruturação do modelo lógico.
-- Documentação das alterações e decisões do projeto.
+| Arquivo | Finalidade |
+|---|---|
+| `banco_grupo01.sql` | Criação do banco de dados e das tabelas, com seus relacionamentos e restrições. |
+| `insercao_grupo01.sql` | Inserção de registros para compor a massa de dados utilizada no projeto. |
+| `consultas_grupo01.sql` | Consultas para obtenção e análise de informações acadêmicas, financeiras e administrativas. |
+| `testes_grupo01.sql` | Comandos destinados a verificar a aplicação das restrições e regras de integridade. |
 
-## 📌 Situação atual
+### Principais recursos utilizados
 
-O projeto apresenta a modelagem e a documentação desenvolvidas durante as etapas da atividade acadêmica.
+- `PRIMARY KEY` e `FOREIGN KEY`.
+- Restrições `NOT NULL` e `UNIQUE`.
+- Restrições `CHECK`.
+- Relacionamentos entre tabelas.
+- Consultas com `SELECT`, `JOIN`, filtros e ordenações.
+- Inserção de dados com `INSERT`.
+- Atualizações e exclusões utilizadas nos testes de integridade.
 
-**Observação:** a implementação do banco em um SGBD, a execução dos scripts SQL e os testes com dados ainda não foram realizados. Portanto, o repositório representa o desenvolvimento da modelagem e da documentação, não um sistema já implementado e testado.
+## 🔎 Consultas e testes
+
+As consultas SQL foram organizadas para responder a situações práticas da escola, incluindo acompanhamento de cobranças, pagamentos, despesas, folha de pagamento e movimentações financeiras.
+
+O arquivo de testes reúne situações que devem ser rejeitadas pelo banco, como duplicidade de chaves, referências inexistentes, valores fora dos limites definidos e violações das regras entre colunas.
+
+**Observação:** os arquivos documentam os comandos e cenários preparados para o projeto. A confirmação de execução e dos resultados dos testes depende da realização dos procedimentos no SGBD.
+
 
 ## 👨‍💻 Integrantes
 
@@ -82,5 +97,5 @@ Projeto desenvolvido como atividade acadêmica na área de Banco de Dados.
 
 <p align="center">
   <strong>Murbach Music School</strong><br>
-  Projeto acadêmico de modelagem e documentação de banco de dados.
+  Modelagem, estruturação e documentação de banco de dados.
 </p>
